@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -25,6 +27,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.composelearn.ui.theme.DefaultTextColor
 import com.example.composelearn.ui.theme.LightBgGreen
 import com.example.composelearn.ui.theme.MediumGreen
 
@@ -35,13 +38,18 @@ import com.example.composelearn.ui.theme.MediumGreen
 @Preview
 @Composable
 fun VerifyPhoneView() {
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 32.dp, end = 32.dp)
+    ) {
         Row {
             Text(
                 text = "9999999999",
                 color = Color.Black,
                 modifier = Modifier
-                    .padding(start = 16.dp)
+                    .padding(start = 16.dp),
+                fontWeight = FontWeight.Medium
             )
             Text(
                 color = MediumGreen,
@@ -58,20 +66,23 @@ fun VerifyPhoneView() {
         ) {
             Button(
                 onClick = { /*TODO*/ },
-                border = BorderStroke(width = 1.dp, brush = SolidColor(Color.White)),
-                shape = MaterialTheme.shapes.medium,
+                shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = LightBgGreen,
                     contentColor = MediumGreen
                 )
             ) {
-                Text(text = "Verify")
+                Text(
+                    text = "Verify",
+                    fontWeight = FontWeight.Medium
+                )
             }
         }
         Row {
             Text(
                 modifier = Modifier.padding(start = 16.dp, top = 8.dp),
-                text = "Didn't Received OTP?"
+                text = "Didn't Received OTP?",
+                fontWeight = FontWeight.Medium
             )
             Text(
                 modifier = Modifier.padding(start = 8.dp, top = 8.dp),
@@ -105,17 +116,24 @@ fun OtpEditText() {
     var otp6 by remember {
         mutableStateOf("")
     }
-    Row(modifier = Modifier.padding(top = 16.dp)) {
-        Box(modifier = Modifier.padding(start = 16.dp)) {
+    Row(modifier = Modifier
+        .padding(top = 16.dp)
+        .fillMaxWidth()) {
+        Box {
             OutlinedTextField(
                 value = otp1,
-                onValueChange = {},
+                onValueChange = {
+
+                },
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
         Box(modifier = Modifier.padding(start = 16.dp)) {
@@ -123,11 +141,14 @@ fun OtpEditText() {
                 value = otp2,
                 onValueChange = {},
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
         Box(modifier = Modifier.padding(start = 16.dp)) {
@@ -135,11 +156,14 @@ fun OtpEditText() {
                 value = otp3,
                 onValueChange = {},
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
         Box(modifier = Modifier.padding(start = 16.dp)) {
@@ -147,11 +171,14 @@ fun OtpEditText() {
                 value = otp4,
                 onValueChange = {},
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
         Box(modifier = Modifier.padding(start = 16.dp)) {
@@ -159,23 +186,31 @@ fun OtpEditText() {
                 value = otp5,
                 onValueChange = {},
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
         Box(modifier = Modifier.padding(start = 16.dp)) {
             OutlinedTextField(
                 value = otp6,
-                onValueChange = {},
+                onValueChange = {
+
+                },
                 modifier = Modifier
-                    .width(36.dp)
+                    .width(48.dp)
                     .aspectRatio(1f),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = MediumGreen,
-                    unfocusedBorderColor = Color.Black)
+                    unfocusedBorderColor = DefaultTextColor,
+                    cursorColor = MediumGreen,
+                    textColor = DefaultTextColor
+                )
             )
         }
     }

@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composelearn.R
+import com.example.composelearn.ui.theme.DefaultTextColor
 import com.example.composelearn.ui.theme.MediumGreen
 import com.example.composelearn.ui.theme.TextWhite
 
@@ -45,7 +46,7 @@ fun SignUpBrandingView() {
                     ),
                     contentDescription = "brand_logo",
                     modifier = Modifier
-                        .size(100.dp)
+                        .size(92.dp)
                         .clip(CircleShape),
                     contentScale = ContentScale.Crop,
                 )
@@ -67,7 +68,7 @@ fun SignUpBrandingView() {
                         .padding(top = 8.dp),
                     text = "Sustainability starts at home",
                     fontSize = 18.sp,
-                    color = TextWhite,
+                    color = DefaultTextColor
                 )
             }
         }
